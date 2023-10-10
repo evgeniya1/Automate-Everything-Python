@@ -1,10 +1,16 @@
 import requests
 
-data = requests.get(
-    'https://newsapi.org/v2/everything?qInTitle=stock%20market&from=2023-10-01&to=2022-2-28&sortBy=popularity&language=en&apiKey=890603a55bfa47048e4490069ebee18c'
-)
+city_name = 'Denver'
+state_code = 'CO'
+country_code = 'US'
+API_key = '6e8247d2a1f172928d20f65a7f853a83'
 
-content = data.json()
+url = f"api.openweathermap.org/data/2.5/forecast?q={city_name},{state_code},{country_code}&appid={API_key}"
 
-print(content['status'])
-print(content['message'])
+url_city = f"api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&appid={API_key}"
+
+r = requests.get(url_city)
+
+content = r.json()
+
+print(content)
