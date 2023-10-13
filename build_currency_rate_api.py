@@ -8,7 +8,8 @@ def get_currency(in_currency, out_currency):
   url = "https://www.oanda.com/currency-converter/en/?from={in_currency}&to={out_currency}&amount=1"
   content = requests.get(url).text
   soup = BeautifulSoup(content, 'html.parser')
-  rate = soup.find('span', class_="ccOutputRslt").get_text()
+  #rate = soup.find('span', class_="ccOutputRslt").get_text()
+  rate = 0.333
   return rate
 
 
@@ -34,4 +35,4 @@ def api(in_currency, out_currency):
   return jsonify(rate_dict)
 
 
-#app.run(host="0.0.0.0")
+app.run(host="0.0.0.0")
