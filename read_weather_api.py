@@ -4,8 +4,7 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 
 API_key = os.environ['OPENWEATHERAPP_API']
-
-url_city = f"https://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&appid={API_key}?"
+units = 'metric'
 
 latitude = 29.8604
 longitude = -95.3698
@@ -16,7 +15,7 @@ geolocator = Nominatim(user_agent="replit_ai")
 location = geolocator.reverse(f"{latitude}, {longitude}")
 city = location.raw['address']['city']
 
-urtl_lag_log = f"https://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&appid={API_key}"
+urtl_lag_log = f"https://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&units={units}&appid={API_key}"
 
 r = requests.get(urtl_lag_log)
 
