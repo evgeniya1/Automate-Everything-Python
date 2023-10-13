@@ -8,6 +8,5 @@ data = requests.get(
 )
 
 content = data.json()
-print()
 print(content['status'])
 print(content['articles'][0]['title'])
