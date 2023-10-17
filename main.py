@@ -4,10 +4,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-
+from datetime import datetime as dt
 #for local IDE
 #from selenium.webdriver.chrome.service import Service
 #service = Service("path to chrome driver")
+
 
 def get_driver():
   #set options to make browsing easier
@@ -24,41 +25,43 @@ def get_driver():
 
   return driver
 
+
 def clean_text(text):
   return float(text.split(": ")[1])
 
+
+def write_file(text):
+  filename = dt.now().strftime('%Y-%m-%d.%H-%M-%S')
+  print(f"\n*** write {filename}.txt ***\n")
+  with open(f"{filename}.txt", "w") as file:
+    file.write(text)
+
+
 def main():
-  
+
   driver = get_driver()
-  driver.find_element(by = By.ID, value="id_username").send_keys("automated")
+  driver.find_element(by=By.ID, value="id_username").send_keys("automated")
   time.sleep(2)
-  driver.find_element(by = By.ID, value="id_password").send_keys("automatedautomated", Keys.RETURN)
+  driver.find_element(by=By.ID,
+                      value="id_password").send_keys("automatedautomated",
+                                                     Keys.RETURN)
   print(driver.current_url)
   time.sleep(2)
 
-  ##click to HOME 
-  driver.find_element(by = By.XPATH, value="/html/body/nav/div/a").click()
+  ##click to HOME
+  driver.find_element(by=By.XPATH, value="/html/body/nav/div/a").click()
   print(driver.current_url)
-  time.sleep(2) 
-  ## get dynamic number reading
-  element_dynamic = driver.find_element(By.XPATH, value = "/html/body/div[1]/div/h1[2]")
-  #"/html/body/div/h1[2]/div" - from dashboard page
+  time.sleep(2)
 
-  date = time.today()
-
-  print(date)
-  
   # for i in range(10):
+  #   ## get dynamic number reading
+  #   element_dynamic = driver.find_element(By.XPATH,
+  #                                         value="/html/body/div[1]/div/h1[2]")
+  #   #"/html/body/div/h1[2]/div" - from dashboard page
+  #   temperature = str(clean_text(element_dynamic.text))
+  #   write_file(temperature)
   #   time.sleep(2)
-  #   element_dynamic = driver.find_element(By.XPATH, value = "/html/body/div[1]/div/h1[2]")
-  #   date = time.today()    
-    
-  #   # write temperature in one file
-  #   file1 = open(f"{date}.txt", "w") 
-  #   file1.write(clean_text(element_dynamic.text))
-  #   file1.close()
 
-  return 
 
 if __name__ == "__main__":
-  print(main())
+  main()
