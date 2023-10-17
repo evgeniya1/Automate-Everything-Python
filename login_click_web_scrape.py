@@ -53,14 +53,14 @@ def main():
   print(driver.current_url)
   time.sleep(2)
 
-  # for i in range(10):
-  #   ## get dynamic number reading
-  #   element_dynamic = driver.find_element(By.XPATH,
-  #                                         value="/html/body/div[1]/div/h1[2]")
-  #   #"/html/body/div/h1[2]/div" - from dashboard page
-  #   temperature = str(clean_text(element_dynamic.text))
-  #   write_file(temperature)
-  #   time.sleep(2)
+  for i in range(2):
+    ## get dynamic number reading
+    element_dynamic = driver.find_element(By.XPATH,
+                                          value="/html/body/div[1]/div/h1[2]")
+    #"/html/body/div/h1[2]/div" - from dashboard page
+    temperature = str(clean_text(element_dynamic.text))
+    write_file(temperature)
+    time.sleep(2)
 
 
 if __name__ == "__main__":
