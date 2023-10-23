@@ -13,6 +13,7 @@ bs4 = "^0.0.1"
 geopy = "^2.4.0"
 selenium = "4.14.0"
 yagmail = "0.15.293"
+twilio = "^8.10.0"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
