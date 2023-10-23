@@ -458,6 +458,21 @@ files = [
 test = ["pytest (>=6)"]
 
 [[package]]
+name = "filestack-python"
+version = "3.5.0"
+description = "Filestack Python SDK"
+optional = false
+python-versions = "*"
+files = [
+    {file = "filestack-python-3.5.0.tar.gz", hash = "sha256:a7ee71b0a6b3e233eafe0eab9e96463bc1b339df1fdc697fdc376dffc0c80468"},
+    {file = "filestack_python-3.5.0-py3-none-any.whl", hash = "sha256:c4dd43ffd1f4b1172d96b41a5a250e0c050573bb0abb94720965972f2d85bcb8"},
+]
+
+[package.dependencies]
+requests = ">=2.25.1"
+trafaret = "2.0.2"
+
+[[package]]
 name = "flask"
 version = "3.0.0"
 description = "A simple framework for building complex web applications."
@@ -478,6 +493,16 @@ Werkzeug = ">=3.0.0"
 [package.extras]
 async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
+
+[[package]]
+name = "fpdf"
+version = "1.7.2"
+description = "Simple PDF generation for Python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "fpdf-1.7.2.tar.gz", hash = "sha256:125840783289e7d12552b1e86ab692c37322e7a65b96a99e0ea86cca041b6779"},
+]
 
 [[package]]
 name = "frozenlist"
@@ -1174,6 +1199,21 @@ files = [
 ]
 
 [[package]]
+name = "trafaret"
+version = "2.0.2"
+description = "Validation and parsing library"
+optional = false
+python-versions = "*"
+files = [
+    {file = "trafaret-2.0.2-py3-none-any.whl", hash = "sha256:5d560577cb7f5ec015cdb9298e46ec07fd9e0224bc0aaecc7d0fa0e92ea251d9"},
+    {file = "trafaret-2.0.2.tar.gz", hash = "sha256:61dfc25b574f70bfdf7ee3a808ec423061811c13a10b8d3c9e11ab539b96ab65"},
+]
+
+[package.extras]
+objectid = ["pymongo (>=2.4.1)"]
+rfc3339 = ["python-dateutil (>=1.5)"]
+
+[[package]]
 name = "trio"
 version = "0.22.2"
 description = "A friendly Python library for async concurrency and I/O"
@@ -1396,4 +1436,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "88fd28c7a06b6371de495fd6661569deca6a54499ab57921119b29d5107a5cbf"
+content-hash = "ca13a0e167a636a782f9d619e849f5673b696e492c416d2a0456aaedbb30219f"
